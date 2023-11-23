@@ -17,6 +17,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2020",
+    "types" :[
+      "tslib"
+    ],
     "module": "es2020",
     "lib": [
       "es2020",
