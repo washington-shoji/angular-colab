@@ -1,0 +1,26 @@
+<div>
+  <h1>My Product Page</h1>
+
+  <div *ngIf="isLoading">
+    <span>Loading...</span>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <span>Error: {{errorMessage}}</span>
+  </div>
+
+  <div class="card-container" *ngIf="products.length && !isLoading">
+    <div class="product-card" *ngFor="let item of products">
+      <div class="image-container">
+        <img class="image" src="{{item.images[0]}}" alt=""/>
+      </div>
+      <div>
+        <h2>{{item.title}}</h2>
+        <span>{{item.description}}</span>
+        <span>{{item.price}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--//TODO: Add div with *ngIf and *ngFor to render category-->
