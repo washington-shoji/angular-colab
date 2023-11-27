@@ -1,0 +1,7 @@
+<div class="category-container" *ngIf="categories.length && !isLoading">
+    <div class="row" *ngFor="let item of categories">
+        <div>
+            <h3>{{item.title}}</h3>
+        </div>
+    </div>
+</div>

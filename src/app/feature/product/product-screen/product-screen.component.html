@@ -8,19 +8,31 @@
   <div *ngIf="errorMessage">
     <span>Error: {{errorMessage}}</span>
   </div>
+  
+  <!--//TODO: Add div with *ngIf and *ngFor to render category-->
+  <!-- <app-product-category>
 
-  <div class="card-container" *ngIf="products.length && !isLoading">
-    <div class="product-card" *ngFor="let item of products">
-      <div class="image-container">
-        <img class="image" src="{{item.images[0]}}" alt=""/>
-      </div>
-      <div>
-        <h2>{{item.title}}</h2>
-        <span>{{item.description}}</span>
-        <span>{{item.price}}</span>
+  </app-product-category> -->
+
+<div class="container">
+  <div class="category-container" *ngIf="categories && !isLoading">
+        <div class="product-card" *ngFor="let item of categories">
+          <h3>{{item}}</h3>                 
+        </div>
+    </div>
+
+    <div class="card-container" *ngIf="products.length && !isLoading">
+      <div class="product-card" *ngFor="let item of products">
+        <div class="image-container">
+          <img class="image" src="{{item.images[0]}}" alt=""/>
+        </div>
+        <div>
+          <h2>{{item.title}}</h2>
+          <span>{{item.description}}</span>
+          <span>{{item.price}}</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--//TODO: Add div with *ngIf and *ngFor to render category-->
+</div>
