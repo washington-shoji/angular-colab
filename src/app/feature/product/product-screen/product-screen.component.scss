@@ -1,29 +1,11 @@
-.card-container {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: auto;
-}
-
 .category-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  gap: 6px;
-}
-
-.card-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, 350px);
   gap: 6px;
 }
 
-.image-container {
-}
-
-.image {
-  width: 350px;
-  height: 350px;
-  border-radius: 4px;
-  padding: 6px;
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
+  gap: 6px;
 }
