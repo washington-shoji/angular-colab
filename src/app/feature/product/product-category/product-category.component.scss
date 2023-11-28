@@ -1,9 +1,9 @@
 .category-container {
     display: flex;
+    gap: 16px;
   }
-  
+
   .category-container div {
-    margin: 5px; padding: 10px; 
-    border: 1px solid #ccc; 
+    margin: 5px; padding: 10px;
+    border: 1px solid #ccc;
   }
-  
