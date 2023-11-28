@@ -1,4 +1,7 @@
 <div class="category-container">
-  <h3>{{category}}</h3>
-  <button (click)="sendCategory(category)">Category Event</button>
+  <div class="category-item">
+    <span>{{category}}</span>
+    <button class="category-button" (click)="sendCategory(category)">Select Category</button>
+  </div>
+
 </div>

@@ -1,9 +1,24 @@
 .category-container {
-    display: flex;
-    gap: 16px;
-  }
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
 
-  .category-container div {
-    margin: 5px; padding: 10px;
-    border: 1px solid #ccc;
-  }
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.category-button {
+  background: lightblue;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.category-button:hover {
+  border: 2px solid black;
+}
