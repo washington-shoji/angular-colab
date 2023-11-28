@@ -8,7 +8,7 @@
   <div *ngIf="errorMessage">
     <span>Error: {{errorMessage}}</span>
   </div>
-  
+
   <!--//TODO: Add div with *ngIf and *ngFor to render category-->
   <!-- <app-product-category>
 
@@ -17,22 +17,26 @@
 <div class="container">
   <div class="category-container" *ngIf="categories && !isLoading">
         <div class="product-card" *ngFor="let item of categories">
-          <h3>{{item}}</h3>                 
+          <app-product-category
+          [category]="item"
+          (categoryFromChildEvent)="categoryReceiveParentEvent($event)"
+          >
+          </app-product-category>
         </div>
     </div>
 
     <div class="card-container" *ngIf="products.length && !isLoading">
       <div class="product-card" *ngFor="let item of products">
-        <div class="image-container">
-          <img class="image" src="{{item.images[0]}}" alt=""/>
-        </div>
-        <div>
-          <h2>{{item.title}}</h2>
-          <span>{{item.description}}</span>
-          <span>{{item.price}}</span>
-        </div>
+          <app-product-card
+          [product]="item"
+          [category]="category"
+          ></app-product-card>
       </div>
     </div>
+
+
+<!--  TODO: Add a child component for User-->
+<!--  show firstName, email, username-->
   </div>
 
 </div>

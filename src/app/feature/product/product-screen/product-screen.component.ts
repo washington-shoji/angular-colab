@@ -1,37 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Subscription, concat } from 'rxjs';
-
-
-//controls the information that we are going to use from the API call
-interface Product {
-  "id": number,
-  "title": string,
-  "description": string,
-  "price": number,
-  "discountPercentage": number,
-  "rating": number,
-  "stock": number,
-  "brand": string,
-  "category": string,
-  "thumbnail": string,
-  "images": string[]
-}
-
-interface Products {
-  products: Product[];
-}
-
-//TODO: Create category interface, create a category list interface
-interface Category {
-  "title": string
-}
-
-interface Categories {
-  categories: Category[];
-}
-
-
+import {Product, Products} from "../prooduct-type";
 
 //TODO: Create a category list interface
 
@@ -47,13 +17,23 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
 
   baseUrl = "https://dummyjson.com";
   productsUrl = "/products"
-  // TODO: Create a url variable for the categories
   categoriesUrl = "/products/categories"
+
+  //TODO: Add a child component for User
+  // show firstName, email, username
+
+  // Add @Input() to child component to pass a User
+  // Add Output() event from child to parent
 
 
   products: Product[];
-  // TODO: Create, a categories (array/list) variable for the data with the category type
-  categories: Category[];
+  categories: string[];
+
+  category: string = "";
+
+  //TODO: Add users variable
+
+  //TODO: Add a user variable
 
   isLoading: boolean = false;
   errorMessage: string | null = null;
@@ -94,14 +74,14 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
       })
     );
   }
-  
+
   fetchCategoryDataInit(): void {
     this.isLoading = true;
     this._subscription.add(
-      this.http.get<Categories>(this.baseUrl.concat(this.categoriesUrl)).subscribe({
+      this.http.get<string[]>(this.baseUrl.concat(this.categoriesUrl)).subscribe({
         next: (data) => {
           // Means success
-          this.categories = data.categories;
+          this.categories = data;
           console.warn('categoryData', data);
           console.log(this.categories)
         },
@@ -114,6 +94,13 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
         complete: () => {}
       })
     );
+  }
+
+  // TODO: add a api get for Users, 'https://dummyjson.com/users'
+
+  categoryReceiveParentEvent($event: string): void {
+    this.category = $event;
+    //console.warn("event from child >>>>>", $event);
   }
 
 }
