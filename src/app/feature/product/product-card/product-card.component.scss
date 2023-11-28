@@ -1,3 +1,10 @@
+.product-container {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
 .card-container {
   padding: 12px;
   display: flex;
@@ -17,11 +24,16 @@
 }
 
 .image-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #000;
 }
 
 .image {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   border-radius: 4px;
   padding: 6px;
 }
