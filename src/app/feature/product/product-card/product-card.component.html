@@ -1,1 +1,16 @@
-<p>product-card works!</p>
+<div class="image-container">
+  <ng-container *ngIf="product.images[0]">
+    <img class="image" src="{{product?.images[0]}}" alt=""/>
+  </ng-container>
+  <ng-container *ngIf="!product.images[0]">
+    <span>No Image</span>
+  </ng-container>
+</div>
+<div>
+  <h2>{{product?.title}}</h2>
+  <span>{{product?.description}}</span>
+  <span>{{product?.price}}</span>
+</div>
+<div>
+  <span>{{category}}</span>
+</div>
