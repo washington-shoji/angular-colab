@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Subscription, concat } from 'rxjs';
-import {Product, Products} from "../prooduct-type";
+import {Product, Products, User, Users} from "../prooduct-type";
 
 //TODO: Create a category list interface
 
@@ -12,12 +12,11 @@ import {Product, Products} from "../prooduct-type";
 })
 export class ProductScreenComponent implements OnInit, OnDestroy {
   //TODO: This is the dirty way, we will clean it up later with a proper refactoring
-
   private _subscription: Subscription;
-
   baseUrl = "https://dummyjson.com";
   productsUrl = "/products"
   categoriesUrl = "/products/categories"
+  usersUrl = "/users"
 
   //TODO: Add a child component for User
   // show firstName, email, username
@@ -25,9 +24,9 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
   // Add @Input() to child component to pass a User
   // Add Output() event from child to parent
 
-
   products: Product[];
   categories: string[];
+  users: User[];
 
   category: string = "";
 
@@ -43,11 +42,13 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
     this._subscription = new Subscription();
     this.categories = [];
     this.products = [];
+    this.users = [];
   }
 
   ngOnInit(): void {
     this.fetchProductDataInit();
     this.fetchCategoryDataInit();
+    this.fetchUsersDataInit();
   }
 
   ngOnDestroy(): void {
@@ -83,7 +84,30 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
           // Means success
           this.categories = data;
           console.warn('categoryData', data);
-          console.log(this.categories)
+        },
+        error: (error) => {
+          // Means error
+          this.isLoading = false;
+          this.errorMessage = error.message;
+          console.warn('error', error)
+        },
+        complete: () => {}
+      })
+    );
+  }
+  
+  // TODO: add a api get for Users, 'https://dummyjson.com/users'
+  fetchUsersDataInit(): void {
+    this.isLoading = true;
+    this._subscription.add(
+      this.http.get<Users>(this.baseUrl.concat(this.usersUrl)).subscribe({
+        next: (data) => {
+          // Means success
+          this.isLoading = false;
+          this.users = data.users;
+          console.log(data.users)
+          console.warn('userList', data);
+          
         },
         error: (error) => {
           // Means error
@@ -96,7 +120,6 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
     );
   }
 
-  // TODO: add a api get for Users, 'https://dummyjson.com/users'
 
   categoryReceiveParentEvent($event: string): void {
     this.category = $event;

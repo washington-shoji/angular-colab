@@ -27,5 +27,17 @@ export interface Categories {
 }
 
 // TODO: Add User Interface with just a few fields
+export interface User {
+  "id": number,
+  "firstName": string,
+  "lastName": string,
+  "maidenName": string,
+  "age": number,
+  "gender": string,
+  "email": string
+}
 
 // TODO: Add a array/list of Users Interface
+export interface Users{
+  users: User[];
+}
