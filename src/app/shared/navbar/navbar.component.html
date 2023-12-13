@@ -1,0 +1,42 @@
+<button
+	[ngClass]="isOpen
+		? ' bg-red-600 left-28'
+		: ''"
+    class="inline-flex p-1 m-1 fixed top-4 left-0 bg-black text-white rounded-md shadow-md z-30"
+	(click)="toggleIsOpen()"
+>
+	<span class="material-symbols-outlined">{{isOpen ? 'cancel' : 'left_panel_open'}}</span>
+</button>
+
+
+<div [ngClass]="isOpen ? 'flex flex-col px-2 bg-black text-zinc-50 z-20 h-screen' : 'hidden'">
+	<h2 class=" mt-6 text-lg uppercase shadow-2xl">Proto App</h2>
+	<div class=" flex flex-col justify-between h-full shadow-2xl">
+		<div class=" mt-6">
+            <ng-container *ngFor="let item of menuItems">
+                <a class="flex gap-1 p-1 rounded-sm my-2 hover:bg-slate-50 hover:text-black"
+                [routerLink]="item.link"
+            >
+                <span class="material-symbols-outlined">{{item.icon}}</span>
+                <span>{{item.title}}</span>
+            </a>
+            </ng-container>
+		</div>
+		<div class=" mt-6 shadow-2xl">
+			<a
+				class=" flex gap-1 p-1 rounded-sm mb-5 bg-slate-50 bg-opacity-10 hover:bg-slate-50 hover:text-black"
+				href="/"
+			>
+				<span class="material-symbols-outlined">tune</span>
+				<span>Settings</span>
+			</a>
+			<a
+				class=" flex gap-1 p-1 rounded-sm my-1 bg-red-600 bg-opacity-20 hover:bg-red-600 hover:text-black"
+				href="/"
+			>
+				<span class="material-symbols-outlined">logout</span>
+				<span>Logout</span>
+			</a>
+		</div>
+	</div>
+</div>
