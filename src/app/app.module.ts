@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductModule } from "./feature/product";
+import { SharedModule } from './shared/shared.module';
+import { EventModule } from './feature/event/event.module';
+import { DashboardModule } from './feature/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,10 @@ import { ProductModule } from "./feature/product";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductModule
+    ProductModule,
+    EventModule,
+    DashboardModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
