@@ -10,12 +10,11 @@
   </div>
 
   <!--//TODO: Add div with *ngIf and *ngFor to render category-->
-  <!-- <app-product-category>
-
-  </app-product-category> -->
-
-  <div class="container">
-    <!-- <div class="category-container" *ngIf="categories && !isLoading">
+  
+    <div class="container">
+    
+  <!-- These are categories -->
+      <!-- <div class="category-container" *ngIf="categories && !isLoading">
           <div class="product-card" *ngFor="let item of categories">
             <app-product-category
             [category]="item"
@@ -24,24 +23,17 @@
             </app-product-category>
           </div>
     </div> -->
-
-    <!-- <div class="card-container" *ngIf="products.length && !isLoading">
+     
+    <!-- This are the product -->
+      <div class="card-container" *ngIf="products.length && !isLoading">
       <div class="product-card" *ngFor="let item of products">
         <app-product-card [product]="item" [category]="category">
         </app-product-card>
       </div>
-    </div> -->
-    
-    <!--  TODO: Add a child component for User-->
-    <!--  show firstName, email, username-->
-    <div class="card-user" *ngIf="users.length && !isLoading">
-      <div class="user-class" *ngFor="let item of users">
-        <app-user-category [users]="item">
-
-        </app-user-category>
-        
-      </div>
     </div>
-  </div>
+    
+  <!--  TODO: Add a child component for User-->
+  <!--  show firstName, email, username-->
+    
 
 </div>

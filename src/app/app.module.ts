@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductModule } from "./feature/product";
 import { HttpClientModule } from "@angular/common/http";
-import { ProductCategoryComponent } from './feature/product/product-category/product-category.component';
-import { UserCategoryComponent } from './feature/product/user-category/user-category.component';
+import { UserModule } from './feature/user';
+
+
+
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { UserCategoryComponent } from './feature/product/user-category/user-cate
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     ProductModule,
+    UserModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

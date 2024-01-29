@@ -32,8 +32,8 @@ export interface User {
   "firstName": string,
   "lastName": string,
   "maidenName": string,
-  "age": number,
-  "gender": string,
+  // "age": number,
+  // "gender": string,
   "email": string
 }
 

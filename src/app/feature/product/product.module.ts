@@ -3,20 +3,22 @@ import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductScreenComponent } from './product-screen/product-screen.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
-import { UserCategoryComponent } from './user-category/user-category.component';
-
-
-
 
 @NgModule({
   declarations: [
     ProductCardComponent,
     ProductScreenComponent,
     ProductCategoryComponent,
-    UserCategoryComponent    
+        
   ],
   imports: [
     CommonModule
+  ], 
+  exports:[
+    ProductCardComponent,
+    ProductScreenComponent,
+    ProductCategoryComponent,
   ]
+
 })
 export class ProductModule { }
