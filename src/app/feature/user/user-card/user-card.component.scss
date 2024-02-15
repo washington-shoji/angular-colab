@@ -1,0 +1,25 @@
+.user-container {
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .user-button {
+    background: lightblue;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+  }
+  
+  .user-button:hover {
+    border: 2px solid black;
+  }
+  

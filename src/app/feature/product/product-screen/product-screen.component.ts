@@ -98,28 +98,27 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
   
   // TODO: add a api get for Users, 'https://dummyjson.com/users'
   fetchUsersDataInit(): void {
-    this.isLoading = true;
-    this._subscription.add(
-      this.http.get<Users>(this.baseUrl.concat(this.usersUrl)).subscribe({
-        next: (data) => {
-          // Means success
-          this.isLoading = false;
-          this.users = data.users;
-          console.log(data.users)
-          console.warn('userList', data);
+    // this.isLoading = true;
+    // this._subscription.add(
+    //   this.http.get<Users>(this.baseUrl.concat(this.usersUrl)).subscribe({
+    //     next: (data) => {
+    //       // Means success
+    //       this.isLoading = false;
+    //       this.users = data.users;
+    //       console.log(data.users)
+    //       console.warn('userList', data);
           
-        },
-        error: (error) => {
-          // Means error
-          this.isLoading = false;
-          this.errorMessage = error.message;
-          console.warn('error', error)
-        },
-        complete: () => {}
-      })
-    );
+    //     },
+    //     error: (error) => {
+    //       // Means error
+    //       this.isLoading = false;
+    //       this.errorMessage = error.message;
+    //       console.warn('error', error)
+    //     },
+    //     complete: () => {}
+    //   })
+    // );
   }
-
 
   categoryReceiveParentEvent($event: string): void {
     this.category = $event;

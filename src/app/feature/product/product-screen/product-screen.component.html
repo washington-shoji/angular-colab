@@ -14,15 +14,15 @@
     <div class="container">
     
   <!-- These are categories -->
-      <!-- <div class="category-container" *ngIf="categories && !isLoading">
-          <div class="product-card" *ngFor="let item of categories">
-            <app-product-category
-            [category]="item"
-            (categoryFromChildEvent)="categoryReceiveParentEvent($event)"
-            >
-            </app-product-category>
-          </div>
-    </div> -->
+  <div class="category-container" *ngIf="categories && !isLoading">
+      <div class="product-card" *ngFor="let item of categories">
+        <app-product-category
+        [category]="item"
+        (categoryFromChildEvent)="categoryReceiveParentEvent($event)"
+        >
+        </app-product-category>
+      </div>
+</div>
      
     <!-- This are the product -->
       <div class="card-container" *ngIf="products.length && !isLoading">

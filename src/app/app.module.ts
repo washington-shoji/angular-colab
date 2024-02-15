@@ -9,19 +9,16 @@ import { UserModule } from './feature/user';
 
 
 
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    // AppRoutingModule,
     ProductModule,
-    UserModule
-    
-  ],
+    UserModule,
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

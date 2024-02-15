@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User, Users } from '../../product/prooduct-type';
 import { HttpClient } from '@angular/common/http';
@@ -17,16 +17,23 @@ export class UserScreenComponent implements OnInit {
 
   //properties
   users: User[];
+  userToDisplay: User
 
   //cotor
   constructor(private http: HttpClient) { 
     this._subscription = new Subscription();
     this.users = [];
   }
+  
+  onUserSelected(user: User) {
+    this.userToDisplay = user;
+  }
 
   ngOnInit(): void {
     this.fetchUserData();
   }
+
+ 
 
   fetchUserData(): void{
     this._subscription.add(

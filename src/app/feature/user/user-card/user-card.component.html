@@ -1,10 +1,22 @@
-<!-- <div class="user-card col">
-        <h4>{{user.firstName}} {{user.lastName}}</h4>
-        <h4>{{user.email}}</h4>    
-    
-</div> -->
+<div class="user-container">
+    <a class="user-item" ref="#"  >
+        <div class="pull-left">
+            <h4 class="list-group-item-heading">{{user.lastName}} {{user.firstName}}</h4>
+        </div>
+        <div class="pull-right">
+            <p class="list-group-item-text">{{user.email}}</p>
+        </div>
+        <button class="btn btn-primary" (click)="onUserSelection(user)">User Details</button>
+    </a>  
+</div>
 
 
-<span>{{user.firstName}}</span>
+  
+
+
+
+
+
+
 
 

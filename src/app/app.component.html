@@ -1,10 +1,24 @@
 <!-- <router-outlet></router-outlet> -->
 
 
-<app-user-screen></app-user-screen>
+<div class="container-fluid">
+    <div class="container-fluid-header" (featureSelected)="onNavigate($event)">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">My Amazon Copycat</a>
+            </div>
+            <div class="colapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" (click)="onSelect('products')">Products</a></li>
+                    <li><a href="#" (click)="onSelect('users')">Users</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<app-product-screen>
+    <div class="container-fluid-pages">
+        <app-product-screen *ngIf="loadedFeature === 'products'"></app-product-screen>
+        <app-user-screen *ngIf="loadedFeature === 'users'"></app-user-screen>        
+    </div>
     
-</app-product-screen>
-
-
+</div>
