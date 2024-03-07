@@ -18,11 +18,7 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
   categoriesUrl = "/products/categories"
   usersUrl = "/users"
 
-  //TODO: Add a child component for User
-  // show firstName, email, username
-
-  // Add @Input() to child component to pass a User
-  // Add Output() event from child to parent
+ 
 
   products: Product[];
   categories: string[];
@@ -30,9 +26,7 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
 
   category: string = "";
 
-  //TODO: Add users variable
-
-  //TODO: Add a user variable
+  
 
   isLoading: boolean = false;
   errorMessage: string | null = null;
@@ -48,7 +42,6 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.fetchProductDataInit();
     this.fetchCategoryDataInit();
-    this.fetchUsersDataInit();
   }
 
   ngOnDestroy(): void {
@@ -96,29 +89,8 @@ export class ProductScreenComponent implements OnInit, OnDestroy {
     );
   }
   
-  // TODO: add a api get for Users, 'https://dummyjson.com/users'
-  fetchUsersDataInit(): void {
-    // this.isLoading = true;
-    // this._subscription.add(
-    //   this.http.get<Users>(this.baseUrl.concat(this.usersUrl)).subscribe({
-    //     next: (data) => {
-    //       // Means success
-    //       this.isLoading = false;
-    //       this.users = data.users;
-    //       console.log(data.users)
-    //       console.warn('userList', data);
-          
-    //     },
-    //     error: (error) => {
-    //       // Means error
-    //       this.isLoading = false;
-    //       this.errorMessage = error.message;
-    //       console.warn('error', error)
-    //     },
-    //     complete: () => {}
-    //   })
-    // );
-  }
+  
+  
 
   categoryReceiveParentEvent($event: string): void {
     this.category = $event;
